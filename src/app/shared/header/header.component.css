@@ -1,0 +1,12 @@
+.navbar-custom {
+    height: 70px;
+}
+.container.menu {
+    position: relative;
+}
+
+.container.menu h3 {
+    position: absolute;
+    top: -20px;
+    /* ajusta esta propiedad según la altura deseada */
+}
