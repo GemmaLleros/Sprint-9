@@ -1,6 +1,11 @@
 .navbar-custom {
-    height: 70px;
+    height: 80px;
 }
+
+.navbar-toggler {
+    background-color: #94AF9F;
+}
+
 .container.menu {
     position: relative;
 }
@@ -8,5 +13,18 @@
 .container.menu h3 {
     position: absolute;
     top: -20px;
-    /* ajusta esta propiedad según la altura deseada */
 }
+
+.btn {
+    font-size: 18px;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;  
+}
+.decorative-line {
+    border-left: 2px solid #94AF9F;
+    height: 35px;
+  }

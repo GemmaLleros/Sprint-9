@@ -1,14 +1,14 @@
 <div id="navbar-primary">
     <div class="container">
         <div class="row align-items-start justify-content-center">
-            <nav class="navbar navbar-expand-lg navbar-custom navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-custom navbar-light">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <div class="col d-flex justify-content-start">
+                        <!-- <div class="col d-flex justify-content-start">
                             <div class="dropdown">
                                 <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,32 +19,17 @@
                                     <li><a class="dropdown-item" href="#">Spanish</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                        </div>
+                        </div> -->
                         <div class="col d-flex justify-content-end">
-                            <button type="button" class="btn btn-light">Login</button>
-                            <button type="button" class="btn btn-light">Register</button>
+                            <button type="button" class="btn border-0">Login</button>
+                            <span class="decorative-line mx-3"></span>
+                            <button type="button" class="btn border-0 last">Register</button>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="container menu">
-            <div class="row ">
-                <div class="col-12 d-flex align-items-end justify-content-center mt-negative">
-                    <h3>Tapioles Apartament</h3>
-                </div>
-                <div class="col mt-5">Home</div>
-                <div class="col mt-5">Overview</div>
-                <div class="col mt-5">Map</div>
-                <div class="col mt-5">Gallery</div>
-                <div class="col mt-5">Rates</div>
-                <div class="col mt-5">Availability</div>
-                <div class="col mt-5">Reviews</div>
-                <div class="col mt-5">Contact</div>
-            </div>
-        </div>
+        <app-menu></app-menu>
     </div>
 </div>
 
