@@ -1,19 +1,27 @@
 h3 {
-   color: #94AF9F;
+    color: #94AF9F;
+    font-weight: bold;
 }
 
 .decorative-line {
-    border-top: 4px solid #94AF9F;
+    border-top: 2px solid #94AF9F;
     margin-top: 5px;
 }
 
 .col:hover {
     text-decoration: underline;
-    text-underline-position: under;
+    text-decoration: underline;
     text-decoration-color: #94AF9F;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 3px;
 }
 
 .col {
-    font-size: 18px;
+    font-size: 16px;
+    color: #B7B7B7;
+}
+.col.selected {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #94AF9F;
+    text-decoration-thickness: 4px;
 }

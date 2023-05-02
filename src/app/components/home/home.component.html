@@ -1,1 +1,12 @@
-<p>home works!</p>
+<ngb-carousel >
+	<ng-template *ngFor="let serie of series" ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img class="center-image" src="{{serie.img}}" alt="Random first slide" />
+		</div>
+		<div class="carousel-caption">
+			<h3>{{serie.name}}</h3>
+			<p>{{serie.desc}}</p>
+		</div>
+	</ng-template>	
+</ngb-carousel>
+<p>holaaaaaa</p>

@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MenuComponent } from './shared/header/menu/menu.component';
+import { ComponentsModule } from './components/components.module';
+
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { MenuComponent } from './shared/header/menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ComponentsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

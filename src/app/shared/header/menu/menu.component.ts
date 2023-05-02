@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  isColSelected: string;
 
+  constructor() {
+    this.isColSelected = "";
+  }
 }
+
