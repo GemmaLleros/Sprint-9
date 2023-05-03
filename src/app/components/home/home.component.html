@@ -1,12 +1,32 @@
-<ngb-carousel >
-	<ng-template *ngFor="let serie of series" ngbSlide>
-		<div class="picsum-img-wrapper">
-			<img class="center-image" src="{{serie.img}}" alt="Random first slide" />
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-4">
+			<ngb-carousel >
+				<ng-template *ngFor="let serie of series" ngbSlide>
+					<div class="picsum-img-wrapper">
+						<img class="center-image" src="{{serie.img}}" alt="Random first slide" />
+					</div>
+					<div class="carousel-caption">
+						<h3>{{serie.name}}</h3>
+						<p>{{serie.desc}}</p>
+					</div>
+				</ng-template>	
+			</ngb-carousel>
 		</div>
-		<div class="carousel-caption">
-			<h3>{{serie.name}}</h3>
-			<p>{{serie.desc}}</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row py-4">
+		<div class="col-12 d-flex justify-content-center">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Sequi consectetur, alias incidunt quisquam ut earum unde 
+				eius eligendi voluptate quae itaque, sint aspernatur optio
+				ullam placeat rerum iusto, in aliquam. Lorem ipsum dolor
+				sit amet consectetur, adipisicing elit. Quibusdam voluptate
+				nulla perferendis repellendus laudantium animi rerum quisquam
+				quis, eveniet possimus! Fugit magni id hic? Aliquam eum similique
+				dolores sunt temporibus?
+			</p>
 		</div>
-	</ng-template>	
-</ngb-carousel>
-<p>holaaaaaa</p>
+    </div>
+</div>

@@ -20,7 +20,7 @@ export class HomeComponent {
 
     {
       name:'1',
-      img: '../../../assets/img-tamarit/bird.jpg',
+      img: '../../../assets/img-tamarit/t-1.jpg',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
     },
 

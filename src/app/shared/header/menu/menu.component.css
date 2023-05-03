@@ -8,20 +8,18 @@ h3 {
     margin-top: 5px;
 }
 
-.col:hover {
-    text-decoration: underline;
+.nav-link:hover {
     text-decoration: underline;
     text-decoration-color: #94AF9F;
     text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
 }
 
-.col {
+.nav-link {
     font-size: 16px;
     color: #B7B7B7;
+    margin: 10px;
 }
-.col.selected {
-    text-decoration: underline;
-    text-underline-position: under;
-    text-decoration-color: #94AF9F;
-    text-decoration-thickness: 4px;
-}
+
+
+

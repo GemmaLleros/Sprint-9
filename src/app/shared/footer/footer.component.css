@@ -1,4 +1,12 @@
-.container{
+.container {
     background-color: #94AF9F;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
     
 }
