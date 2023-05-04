@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
 
 
 @Component({

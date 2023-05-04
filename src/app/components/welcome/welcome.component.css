@@ -1,0 +1,17 @@
+header {
+    background-image: url('../../../assets/img-tapioles/t-2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.btn-outline-primary {
+    border-color: #820000;
+}
+
+.btn-outline-primary.text-primary-hover:hover {
+    background-color: #820000;
+    border-color: #820000;
+    color: #fff;
+}

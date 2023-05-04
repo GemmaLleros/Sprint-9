@@ -7,8 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { MenuComponent } from './shared/header/menu/menu.component';
 import { ComponentsModule } from './components/components.module';
+
 
 
 
@@ -17,7 +17,7 @@ import { ComponentsModule } from './components/components.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    
   ],
   imports: [
     BrowserModule,

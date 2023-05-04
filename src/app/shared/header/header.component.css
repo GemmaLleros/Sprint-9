@@ -1,42 +1,47 @@
-.navbar-custom {
-    height: 80px;
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.navbar-toggler {
-    background-color: #94AF9F;
-    background: none;
-    border: none;
+.navbar .navbar-nav .nav-link {
+    font-family: Lato, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.1s;
 }
 
-.navbar-toggler:focus,
-.navbar-toggler:active {
-    outline: none;
-    border: none;
-    box-shadow: none;
+.brand-color {
+    color: #820000;
+    
+    font-size: 40px;
+    
 }
 
-.container.menu {
-    position: relative;
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
 }
 
-.container.menu h3 {
-    position: absolute;
-    top: -20px;
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #820000;
 }
 
-.btn {
-    font-size: 16px;
-    color: #B7B7B7;
-    border: none;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+  
+  
 
-.btn:focus,
-.btn:active {
-    outline: none !important;
-    box-shadow: none !important;
-}
 
-.decorative-line {
-    border-left: 2px solid #94AF9F;
-    height: 30px;
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
