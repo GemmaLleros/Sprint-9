@@ -1,10 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+.navbar-transparent {
+    background-color: transparent !important;
+    /* importante para anular los estilos de Bootstrap */
+}
+
+.navbar-white {
+    background-color: #fff !important;
+}
 
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0.5625rem;
+    padding-top: 0.5625rem;
+    z-index: 1030;
+    transition: background-color 0.5s ease-in-out;
+    /* transición suave del color de fondo */
+}
+
+.fixed-bottom,
+.fixed-top {
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1030;
+}
+
+.fixed-top {
+    top: 0;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -18,30 +46,58 @@
 
 .brand-color {
     color: #820000;
-    
     font-size: 40px;
-    
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: black;
+.navbar-nav .nav-link {
+    color: black !important;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
-    color: #820000;
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #820000 !important;
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-  
-  
 
+.navbar-container.navbar-scrolled {
+    background-color: #fff;
+}
 
-@media (min-width: 992px) {
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-left: 1rem;
-        padding-right: 1rem;
+.navbar-container.navbar-scrolled .navbar-nav {
+    background-color: #fff;
+}
+
+.navbar-dark:before {
+    background-color: #fff;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.navbar-dark.navbar-container.navbar-scrolled:before {
+    transform: translateY(0);
+}
+
+@media (max-width: 972px) {
+    .navbar-collapse {
+        background-color: #fff;
     }
+
+    .navbar-collapse.collapse.show {
+        background-color: #fff;
+    }
+}
+
+/* Estilo para que el fondo se vuelva blanco al hacer scroll */
+.navbar-scrolled {
+    background-color: #fff !important;
 }

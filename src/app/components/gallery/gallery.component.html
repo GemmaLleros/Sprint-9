@@ -1,1 +1,38 @@
-<p>gallery works!</p>
+<div class="container">
+    <div class="gallery-container">
+      <div *ngIf="showGallery">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Gallery</h3>
+                <P> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugit.</P>
+              </div>
+              <div class="card-body pt-5">
+                <div class="row">
+                  <div class="col-md-6 col-lg-4 col-12" *ngFor="let image of images; let i=index">
+                    <img src="{{image.src}}" alt="{{image.alt}}" (click)="openCarousel(i)"
+                         class="img-thumbnail gallery-img">
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="carousel-container">
+      <div *ngIf="!showGallery">
+        <button type="button" class="btn btn-primary" (click)="closeCarousel()">X</button>
+        <ngb-carousel *ngIf="showCarousel" [activeId]="selectedImageIndex ? selectedImageIndex : '' ">
+          <ng-template ngbSlide *ngFor="let image of images; let i=index" [id]="i.toString()">
+            <img src="{{image.src}}" alt="{{image.alt}}" class="d-block w-100">
+          </ng-template>
+          <button class="carousel-control-prev" ngbSlidePrev><</button>
+          <button class="carousel-control-next" ngbSlideNext>></button>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+  

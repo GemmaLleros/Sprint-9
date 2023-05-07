@@ -1,0 +1,34 @@
+.gallery-container {
+    padding-top: 100px;
+}
+
+.card-header {
+    background-color: #fff;
+
+}
+
+.card {
+    border: none;
+}
+
+.gallery-img {
+    width: auto;
+    height: 250px;
+    margin: 0 !important;
+    padding-top: 10px;
+    object-fit: cover;
+    border: transparent;
+    border-radius: 15px;
+}
+
+.gallery-img:hover {
+    border: 5px solid white;
+}
+
+h3 {
+    font-weight: 900;
+}
+
+ngb-carousel {
+    padding: 60px;
+}
