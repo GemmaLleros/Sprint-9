@@ -8,6 +8,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MapComponent } from './components/map/map.component';
+import { AuthGuard } from './components/guards/auth.guard';
 
 
 
@@ -19,9 +20,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'map', component: MapComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, },
+  { path: 'register', component: RegisterComponent, },
   { path: '**', redirectTo: '' }
 
 ];

@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "gema@gmail.com",
+      "password": "$2a$10$F14Xy9NFfUkZRXU2aDalZeRY2r03tR162e00qdcv.6G5sN9dZfgwG",
+      "firstname": "gema",
+      "lastname": "gema",
+      "age": "18",
+      "id": 1
+    }
+  ]
+}
