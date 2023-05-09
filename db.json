@@ -7,6 +7,14 @@
       "lastname": "gema",
       "age": "18",
       "id": 1
+    },
+    {
+      "email": "gema1@gmail.com",
+      "password": "$2a$10$SQtZ9c/VWlDWcSAFxW0NyOWwvB2auOSmMG2qeMDuqqNuZ51JeCn4K",
+      "firstname": "gema",
+      "lastname": "gema",
+      "age": "1",
+      "id": 2
     }
   ]
 }

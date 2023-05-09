@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Router} from '@angular/router';
+import { User } from '../interfaces/user';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private authService: UsersService,
+    private usersService: UsersService,
     private router: Router
   ) { }
   ngOnInit(): void {
@@ -28,14 +29,14 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(): void {
-    const user = this.registerForm.value
+    const user: User = this.registerForm.value
     console.log(user);
 
-    this.authService.register(user).subscribe(
+    this.usersService.register(user).subscribe(
       res => {
         let token: string | any = Object.values(res);
         localStorage.setItem('token', token[0]);
-        this.router.navigate(['/contact']);
+        this.router.navigate(['/home']);
       }, err => console.log(err)
     )
 

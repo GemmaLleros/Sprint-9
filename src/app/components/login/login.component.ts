@@ -33,11 +33,11 @@ loginError!: boolean;
     const password = this.loginForm.get('password')?.value;
     console.log("Email: ", email); 
     
-    this.authService.login({email, password}).subscribe(
+    this.authService.login(email, password).subscribe(
       res => {
         let token:string | any= Object.values(res);
         localStorage.setItem('token', token[0]);
-     this.router.navigate(['/contact']);
+     this.router.navigate(['/home']);
       },err=>console.log(err)
     )
      

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../interfaces/user';
 
 
 @Injectable({
@@ -12,22 +13,19 @@ export class UsersService {
 
   constructor( private http: HttpClient, private rou: Router) { }
 
-  register(user: any) {
-    let requser={
+  register(user: User) {
+    /* let requser={
       "email": user.email,
       "password":user.password,
       "firstname": user.firstname,
       "lastname": user.lastname,
       "age": user.age
-    }
-    return this.http.post(this.URL + '/register', requser);
+    } */
+    return this.http.post(this.URL + '/users', user);
   }
-  login(user: any) {
-    const requser = {
-      email: user.email,
-      password: user.password
-    };
-    return this.http.post(this.URL + '/signin', requser);
+  login(email: string, password: string) {
+    // const { email, password } = user
+    return this.http.post(this.URL + '/signin', {email, password});
   }
   
   loggedIn(){
