@@ -1,51 +1,52 @@
-import { UsersService } from 'src/app/components/services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from '../services/account.service';
 
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
+
+@Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
-
-loginForm!: FormGroup;
-loginError!: boolean;
-
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: UsersService,
-    private router: Router
-  ) {}
-
-  public ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      
-      email:['',Validators.compose([Validators.email,Validators.required])],
-      password:['',Validators.compose([Validators.minLength(6),Validators.required],)]
-    });
-  }
-  
-  public login(): void {
-    const email = this.loginForm.get('email')?.value;
-    const password = this.loginForm.get('password')?.value;
-    console.log("Email: ", email); 
+    form!: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl!: string;
+    error = '';
     
-    this.authService.login(email, password).subscribe(
-      res => {
-        let token:string | any= Object.values(res);
-        localStorage.setItem('token', token[0]);
-     this.router.navigate(['/home']);
-      },err=>console.log(err)
-    )
-     
-  }
-    required( field : string){
-    return this.loginForm.controls[field].errors && this.loginForm.controls[field].touched
+
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private accountService: AccountService
+    ) { }
+
+    ngOnInit() {
+        this.form = this.formBuilder.group({
+            email: ['', Validators.required],
+            password: ['', Validators.required]
+        });
+
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
-    
-    
+    get f() { return this.form.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        if (this.form.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.accountService.login(this.f['email'].value, this.f['password'].value)
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.loading = false;
+                    this.error = error;
+                });
+    }
 }

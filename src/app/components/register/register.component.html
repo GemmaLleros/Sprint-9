@@ -1,48 +1,42 @@
-<div class="container">
-  <div class="col-11 mx-auto py-4" style="max-width: 450px;">
-    <div class="card h-100">
-      <div class="card-header text-center row">
-        <div class="col-9 col-sm-10">
-          <h3>Create your account</h3>
-        </div>
-        <div class="col-3 col-sm-2">
-          <a class=' btn border-white text-end text-white m-1 ' [routerLink]="['']">
-            X
-          </a>
-        </div>
+<!-- register.component.html -->
+<div class="col-md-6 offset-md-3">
+  <h2>Register</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label>First Name</label>
+          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+          <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+              <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+          </div>
       </div>
-      <div class="card-body">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="g-3">
-
-          <div class="form-group my-3">
-            <input type="text" formControlName="firstname" class="form-control" placeholder="your name">
+      <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+          <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+              <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
           </div>
-
-          <div class="form-group my-3">
-            <input type="text" formControlName="lastname" class="form-control" placeholder="your surname">
-          </div>
-
-          <div class="form-group my-3">
-            <input type="text" formControlName="age" class="form-control" placeholder="your age">
-          </div>
-
-          <div class="form-group my-3">
-            <input type="email" formControlName="email" class="form-control" placeholder="exemple@mail.com">
-            <span class="form-text text-danger mt-0 mb-0" *ngIf="required('email')">Please enter a correct email</span>
-          </div>
-
-          <div class="form-group my-3">
-            <input type="password" formControlName="password" class="form-control"
-              placeholder="Password,min. six caracters">
-            <span class="form-text text-danger mt-0 mb-0" *ngIf="required('password')">Please enter a correct
-              password</span>
-          </div>
-          <div class="text-center col-12">
-            <button type="submit" [disabled]="!registerForm.valid" class="btn btn-block">Create Account</button>
-          </div>
-        </form>
       </div>
-    </div>
-  </div>
-
+      <div class="form-group">
+          <label>Email</label>
+          <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['email']">Email is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label>Password</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+              <div *ngIf="f['password'].errors['required']">Password is required</div>
+              <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Register
+          </button>
+          <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+      </div>
+  </form>
 </div>

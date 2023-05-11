@@ -1,48 +1,57 @@
-import { UsersService } from 'src/app/components/services/users.service';
+// register.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { UserService } from '../services/users.service';
 import { User } from '../interfaces/user';
 
-
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
-})
-
+@Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
-  constructor(
-    private formBuilder: FormBuilder,
-    private usersService: UsersService,
-    private router: Router
-  ) { }
-  ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.minLength(6), Validators.required]],
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      age: ['', [Validators.required]],
-    });
-  }
-  onSubmit(): void {
-    const user: User = this.registerForm.value
-    console.log(user);
+    form!: FormGroup;
+    loading = false;
+    submitted = false;
 
-    this.usersService.register(user).subscribe(
-      res => {
-        let token: string | any = Object.values(res);
-        localStorage.setItem('token', token[0]);
-        this.router.navigate(['/home']);
-      }, err => console.log(err)
-    )
+    constructor(
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private userService: UserService
+    ) { }
 
-  }
-  required(field: string) {
-    return this.registerForm.controls[field].errors && this.registerForm.controls[field].touched;
-  }
+    ngOnInit() {
+        this.form = this.formBuilder.group({
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
+            email: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]]
+        });
+    }
 
+    get f() { return this.form.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        if (this.form.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        const newUser: User = {
+          firstname: this.form.value.firstName,
+          lastname: this.form.value.lastName,
+          age: '',
+          email: this.form.value.email,
+          password: this.form.value.password,
+          id: 0
+        };
+
+        this.userService.create(newUser)
+            .subscribe(
+                data => {
+                    this.router.navigate(['/login'], { queryParams: { registered: true }});
+                },
+                error => {
+                    this.loading = false;
+                });
+    }
 }

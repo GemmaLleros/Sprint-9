@@ -1,43 +1,32 @@
+//users.service.ts
+
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../interfaces/user';
+import { Observable } from 'rxjs';
 
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  private apiServer = 'http://localhost:3000';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class UsersService {
+  constructor(private http: HttpClient) { }
 
-  private URL = 'http://localhost:3000'
-
-  constructor( private http: HttpClient, private rou: Router) { }
-
-  register(user: User) {
-    /* let requser={
-      "email": user.email,
-      "password":user.password,
-      "firstname": user.firstname,
-      "lastname": user.lastname,
-      "age": user.age
-    } */
-    return this.http.post(this.URL + '/users', user);
-  }
-  login(email: string, password: string) {
-    // const { email, password } = user
-    return this.http.post(this.URL + '/signin', {email, password});
+  create(data: any): Observable<any> {
+    return this.http.post(`\${this.apiServer}/users`, data);
   }
   
-  loggedIn(){
-    return !!localStorage.getItem('token');
+  update(id: number, data: any): Observable<any> {
+    return this.http.put(`\${this.apiServer}/users/\${id}`, data);
   }
-
-  getToken(){
-    return localStorage.getItem('token');
+  
+  delete(id: number): Observable<any> {
+    return this.http.delete(`\${this.apiServer}/users/\${id}`);
   }
-
-  logout(){
-    localStorage.removeItem('token');
-    this.rou.navigate(['/login'])
+  
+  findAll(): Observable<any> {
+    return this.http.get(`\${this.apiServer}/users`);
+  }
+  
+  findById(id: number): Observable<any> {
+    return this.http.get(`\${this.apiServer}/users/\${id}`);
   }
 }
