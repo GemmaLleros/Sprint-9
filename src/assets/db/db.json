@@ -1,11 +1,11 @@
 {
-    "users": [ 
+  "users": [
     {
-        "email": "gema@gmail.com",
-        "password": "123456",
-        "firstname": "gema",
-        "lastname": "gema",
-        "id": 1
-      }
-    ]
+      "email": "gema@gmail.com",
+      "password": "123456",
+      "firstname": "gema",
+      "lastname": "gema",
+      "id": 1
+    }
+  ]
 }

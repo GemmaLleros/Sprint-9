@@ -11,8 +11,6 @@ import { MapComponent } from './components/map/map.component';
 
 
 
-
-
 const routes: Routes = [
 
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }, 

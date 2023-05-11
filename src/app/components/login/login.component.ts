@@ -1,52 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AccountService } from '../services/account.service';
 
-
-@Component({ templateUrl: 'login.component.html' })
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
 export class LoginComponent implements OnInit {
-    form!: FormGroup;
-    loading = false;
-    submitted = false;
-    returnUrl!: string;
-    error = '';
-    
+  loginForm!: FormGroup;
+  loginError!: boolean;
 
-    constructor(
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
-        private accountService: AccountService
-    ) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    public accountService: AccountService,
+    private router: Router
+  ) { }
 
-    ngOnInit() {
-        this.form = this.formBuilder.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required]
-        });
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.email, Validators.required])],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+    });
+  }
 
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    }
+  login() {
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
 
-    get f() { return this.form.controls; }
+    this.accountService.login(email, password).subscribe(result => {
+      if (result) {
+        this.loginError = false;
+        this.router.navigate(['/home']);
+        const user = this.accountService.userValue;
+        localStorage.setItem('user', JSON.stringify(user));
+        this.accountService.userSubject.next(user);
+      } else {
+        this.loginError = true;
+      }
+    });
+  }
 
-    onSubmit() {
-        this.submitted = true;
-
-        if (this.form.invalid) {
-            return;
-        }
-
-        this.loading = true;
-        this.accountService.login(this.f['email'].value, this.f['password'].value)
-            .subscribe(
-                data => {
-                    this.router.navigate([this.returnUrl]);
-                },
-                error => {
-                    this.loading = false;
-                    this.error = error;
-                });
-    }
+  required(controlName: string) {
+    const control = this.loginForm.get(controlName);
+    return control ? control.invalid && (control.dirty || control.touched) : false;
+  }
 }
