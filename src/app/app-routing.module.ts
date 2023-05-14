@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'map', component: MapComponent },
-  { path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent,},
   { path: 'login', component: LoginComponent, },
   { path: 'register', component: RegisterComponent, },
   { path: '**', redirectTo: '' }

@@ -1,12 +1,14 @@
-/* .container {
-    background-color: #94AF9F;
-}
-
 footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: relative;
+    margin-top: auto;
+    height: 100px;
+    background-color: #73777B;
     color: white;
-    text-align: center;
-    
-} */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+ 

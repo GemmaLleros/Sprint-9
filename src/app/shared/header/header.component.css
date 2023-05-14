@@ -86,6 +86,11 @@
 .navbar-dark.navbar-container.navbar-scrolled:before {
     transform: translateY(0);
 }
+#header-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    transition: color .1s;
+}
 
 @media (max-width: 972px) {
     .navbar-collapse {

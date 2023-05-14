@@ -20,18 +20,32 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@auth0/angular-jwt": "^5.1.2",
     "@ng-bootstrap/ng-bootstrap": "^14.1.1",
+    "angular-jwt": "^0.1.11",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^4.1.1",
     "leaflet": "^1.7.1",
     "ngx-bootstrap": "^10.2.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "nodemailer": "^6.9.2",
+    "path-browserify": "^1.0.1",
     "rxjs": "~7.8.0",
+    "stream-browserify": "^3.0.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.5",
     "@angular/cli": "~15.2.5",
     "@angular/compiler-cli": "^15.2.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/bcryptjs": "^2.4.2",
     "@types/bootstrap": "^5.2.6",
+    "@types/crypto-js": "^4.1.1",
     "@types/jasmine": "~4.3.0",
     "@types/leaflet": "^1.4.5",
     "css-loader": "^6.7.3",
@@ -44,6 +58,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "style-loader": "^3.3.2",
     "tslib": "^2.5.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   }
 }

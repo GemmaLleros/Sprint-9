@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Gallery</h3>
+                <h1 class="card-title">Gallery</h1>
                 <P> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugit.</P>
               </div>
               <div class="card-body pt-5">
@@ -22,7 +22,7 @@
       </div>
     </div>
   
-    <div class="carousel-container">
+    <div class="carousel-container mb-5">
       <div *ngIf="!showGallery">
         <button type="button" class="btn btn-primary" (click)="closeCarousel()">X</button>
         <ngb-carousel *ngIf="showCarousel" [activeId]="selectedImageIndex ? selectedImageIndex : '' ">
@@ -35,4 +35,5 @@
       </div>
     </div>
   </div>
-  
+ 
+ 

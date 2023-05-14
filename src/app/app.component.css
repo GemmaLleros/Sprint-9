@@ -1,0 +1,4 @@
+.main-content {
+    min-height: calc(70vh - 70px); /* altura de la ventana menos la altura del footer */
+    margin-top: 100px; /* margen superior negativo igual a la altura del footer */
+}

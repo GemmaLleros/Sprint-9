@@ -5,6 +5,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { CarouselModule } from 'ngx-bootstrap/carousel'; 
 
@@ -19,15 +22,16 @@ import { MapComponent } from './map/map.component';
 
 
 
+
 @NgModule({
   declarations: [
     WelcomeComponent,
     HomeComponent,
-    ContactComponent,
     GalleryComponent,
     LoginComponent,
     RegisterComponent,
-    MapComponent
+    MapComponent, 
+    ContactComponent
     
   ],
   imports: [
@@ -37,9 +41,11 @@ import { MapComponent } from './map/map.component';
     ReactiveFormsModule,
     RouterModule,
     NgbModule, 
-    CarouselModule
+    CarouselModule,
+    HttpClientModule
     
-  ]
+  ],
+ 
 })
 export class ComponentsModule { }
 

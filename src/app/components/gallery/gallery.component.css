@@ -1,5 +1,5 @@
 .gallery-container {
-    padding-top: 100px;
+    padding-top: 20px;
 }
 
 .card-header {
@@ -25,10 +25,20 @@
     border: 5px solid white;
 }
 
-h3 {
-    font-weight: 900;
+h1 {
+    font-weight: 700;
 }
 
 ngb-carousel {
     padding: 60px;
+}
+
+.btn-primary {
+    background-color: #820000;
+    border-color: #820000;
+}
+
+.btn-primary:hover {
+    background-color: #6a0000;
+    border-color: #6a0000;
 }

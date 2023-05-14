@@ -1,5 +1,49 @@
-section{
-    margin-top: 160px;
+.container-isLoggedin {
+    justify-content: center;
+    align-items: center;    
 }
 
+#img {
+    background-image: url('../../../assets/img.prueba/bedroom3.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 500px;
+    border-radius: 20px;
+}
+
+#img h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
   
+section {
+    margin-top: 50px;
+}
+
+a {
+    color: #820000;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+button {
+    background-color:#fff;
+    color: #820000;
+    border: 1px solid #820000;
+    margin-bottom: 105px;
+    text-transform: uppercase;
+}
+button:hover {
+    background-color: #820000;
+    color: #fff;
+}
+
+

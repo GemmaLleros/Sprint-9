@@ -1,93 +1,48 @@
-<section class="py-7 py-md-9">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Email -->
-            <div class="mb-3">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-8 col-lg-6 text-center">
-                            <!-- Heading -->
-                            <h2 class="mb-2">
-                                Get in touch with us
-                            </h2>
-                            <!-- Subheading -->
-                            <p class="mb-6">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam illo
-                                praesentium sequi in cum,
-                                beatae maiores quae qui.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 order-md-2">
-                            <!-- Heading -->
-                            <h4 class="mb-2 text-xs">
-                                Write us
-                            </h4>
-                            <!-- Text -->
-                            <p class="mb-4 font-serif">
-                                <a href="mailto:admin@domain.com">xxxx@gmail.com</a>
-                            </p>
-                            <!-- Heading -->
-                            <h4 class="mb-2 text-xs">
-                                Call us
-                            </h4>
-                            <!-- Text -->
-                            <p class="mb-4 font-serif">
-                                <a href="tel:+19876543210">+34 666661883</a>
-                            </p>
-                            <!-- Heading -->
-                            <h4 class="mb-2 text-xs">
-                                Direccion
-                            </h4>
-                            <!-- Text -->
-                            <p class="mb-4 font-serif">
-                                Tapioles 165, Barcelona
-                            </p>
-                        </div>
-                        <div class="col-md-9 order-md-1">
-                            <!-- Form -->
-                            <form class="block-decoration-2" id="contactForm">
-                                <!-- Name -->
-                                <div class="mb-3">
-                                    <label class="visually-hidden" for="user_name">Full name</label>
-                                    <input class="form-control" id="user_name" name="user_name" type="text"
-                                        placeholder="Full name" required="">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="bg-text" for="arrival_date">Arrival</label>
-                                            <input class="form-control" id="arrival_date" name="arrival_date" type="date"
-                                                placeholder="Arrival" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="bg-text" for="departure_date">Departure</label>
-                                            <input class="form-control" id="departure_date" name="departure_date" type="date"
-                                                placeholder="Departure" required="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Message -->
-                                <div class="mb-3">
-                                    <label class="visually-hidden" for="message">Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="9"
-                                        placeholder="Message" required=""></textarea>
-                                </div>
-                                <!-- Button -->
-                                <button class="btn btn-outline-primary" type="submit">
-                                    Send message
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+<div class="container container-isLoggedin">
+    
+        <div class="row">
+            <div class="col-12 justify-content-center align-items-center text-center mb-5">
+                <div id="img">
+                    <h1>Welcome back!</h1>
                 </div>
             </div>
+        </div>
+    
+    <ng-container *ngIf="!accountService.isLoggedIn(); else authenticated">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 text-center">
+                <h3>To access the contact page, you must be logged in.</h3>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center pt-3 ">
+                <button routerLink="/login" class="btn btn-md">Log in</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
 
+<ng-template #authenticated>
+
+    <div *ngIf="accountService.isLoggedIn()">
+        <!-- Contact Information -->
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 p-5">
+                    <h6> You can now make your reservation. Once completed, you will receive a confirmation in your
+                        email.</h6>
+                </div>
+                <div class="col-4 pt-5 mb-5">
+                    <!-- Email -->
+                    <h6>WRITE TO US</h6>
+                    <p><i class="fa-solid fa-envelope"></i><a href="mailto:proyectotapioles@gmail.com">
+                            proyectotapioles@gmail.com</a></p>
+                    <!-- Phone -->
+                    <h6>CALL US</h6>
+                    <p><i class="fa-solid fa-phone"></i><a href="tel:+34 666661883"> +34666661883</a></p>
+                    <!-- Address -->
+                    <h6>ADDRESS</h6>
+                    <p><i class="fa-solid fa-location-dot"></i> Tapioles 165, Barcelona.</p>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</ng-template>

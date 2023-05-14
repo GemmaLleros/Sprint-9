@@ -1,5 +1,9 @@
 /* register.component.css */
 .container {
-    padding-top: 200px;
-  }
-  
+  padding-top: 300px;
+}
+
+
+#my-register-button {
+  border: 2px solid red;
+}

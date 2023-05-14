@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
+  public from: string = '';
   public userSubject = new BehaviorSubject<User | null>(null);
   public userValue: User | null = null;
   private config = { apiUrl: 'http://localhost:3000' };
@@ -40,7 +41,20 @@ export class AccountService {
     this.userValue = null;
     this.userSubject.next(null);
   }
+
+  isLoggedIn(): boolean {
+    return !!this.userSubject.value;
+  }
+
+  fromContact() {
+    this.from = 'contact';
+  }
+
+  lastPageVisited() {
+    return this.from;
+  }
 }
+
 
 
 
