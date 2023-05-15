@@ -1,19 +1,18 @@
 <div class="container container-isLoggedin">
-    
-        <div class="row">
-            <div class="col-12 justify-content-center align-items-center text-center mb-5">
-                <div id="img">
-                    <h1>Welcome back!</h1>
-                </div>
+    <div class="row">
+        <div class="col-12 justify-content-center align-items-center text-center">
+            <div id="img">
+                <h1>Feel like a local</h1>
             </div>
         </div>
-    
+    </div>
+
     <ng-container *ngIf="!accountService.isLoggedIn(); else authenticated">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center pt-4">
                 <h3>To access the contact page, you must be logged in.</h3>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center pt-3 ">
+            <div class="col-12 d-flex justify-content-center align-items-center pt-2 ">
                 <button routerLink="/login" class="btn btn-md">Log in</button>
             </div>
         </div>
@@ -21,26 +20,23 @@
 </div>
 
 <ng-template #authenticated>
-
     <div *ngIf="accountService.isLoggedIn()">
         <!-- Contact Information -->
         <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-8 p-5">
-                    <h6> You can now make your reservation. Once completed, you will receive a confirmation in your
-                        email.</h6>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 p-5">
+                    <h6> You can now make your reservation. Once completed, you will receive a confirmation in your email.</h6>
                 </div>
-                <div class="col-4 pt-5 mb-5">
+                <div class="col-lg-6 col-md-12 p-5 ">
                     <!-- Email -->
                     <h6>WRITE TO US</h6>
-                    <p><i class="fa-solid fa-envelope"></i><a href="mailto:proyectotapioles@gmail.com">
-                            proyectotapioles@gmail.com</a></p>
+                    <p><i class="fa-solid fa-envelope"></i><a href="mailto:proyectotapioles@gmail.com">  proyectotapioles@gmail.com</a></p>
                     <!-- Phone -->
                     <h6>CALL US</h6>
-                    <p><i class="fa-solid fa-phone"></i><a href="tel:+34 666661883"> +34666661883</a></p>
+                    <p><i class="fa-solid fa-phone"></i><a href="tel:+34 666661883">  +34666661883</a></p>
                     <!-- Address -->
                     <h6>ADDRESS</h6>
-                    <p><i class="fa-solid fa-location-dot"></i> Tapioles 165, Barcelona.</p>
+                    <p><i class="fa-solid fa-location-dot"></i>  Tapioles 165, Barcelona.</p>
                 </div>
             </div>
         </div>

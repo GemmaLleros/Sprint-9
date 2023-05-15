@@ -1,12 +1,20 @@
 {
   "users": [
     {
-      "firstName": "gemma",
-      "lastName": "gemma",
+      "firstName": "g",
+      "lastName": "g",
       "age": "",
       "email": "gema@gmail.com",
-      "password": "123456",
+      "password": "MTIzNDU2",
       "id": 1
+    },
+    {
+      "firstName": "g",
+      "lastName": "g",
+      "age": "",
+      "email": "gema1@gmail.com",
+      "password": "MTIzNDU2",
+      "id": 2
     }
   ]
 }

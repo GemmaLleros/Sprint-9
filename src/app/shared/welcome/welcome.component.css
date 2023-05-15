@@ -1,5 +1,6 @@
 header {
     background-image: url('../../../assets/img-tapioles/t-2.jpg');
+    background-size: 100% auto;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -14,4 +15,11 @@ header {
     background-color: #820000;
     border-color: #820000;
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    header {
+        background-size: auto 100%;
+        background-position: top center;
+    }
 }

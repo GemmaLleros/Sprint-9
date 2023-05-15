@@ -9,6 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './shared/welcome/welcome.component';
+
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    WelcomeComponent
     
   ],
   imports: [

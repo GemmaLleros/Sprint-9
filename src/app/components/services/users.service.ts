@@ -1,6 +1,8 @@
+//users.service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -9,23 +11,24 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  create(data: any): Observable<any> {
-    return this.http.post(this.apiServer + '/users', data);
+  create(data: User): Observable<User> {
+    return this.http.post<User>(`${this.apiServer}/users`, data);
   }
   
-  update(id: number, data: any): Observable<any> {
-    return this.http.put(this.apiServer + '/users/' + id, data);
+  update(id: number, data: User): Observable<User> {
+    return this.http.put<User>(`${this.apiServer}/users/${id}`, data);
   }
   
-  delete(id: number): Observable<any> {
-    return this.http.delete(this.apiServer + '/users/' + id);
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServer}/users/${id}`);
   }
   
-  findAll(): Observable<any> {
-    return this.http.get(this.apiServer + '/users');
+  findAll(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiServer}/users`);
   }
   
-  findById(id: number): Observable<any> {
-    return this.http.get(this.apiServer + '/users' + id);
+  findById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiServer}/users/${id}`);
   }
 }
+

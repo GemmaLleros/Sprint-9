@@ -20,15 +20,20 @@ export class AccountService {
   }
 
   login(email: string, password: string) {
-    return this.http.get<User[]>(`${this.config.apiUrl}/users?email=${email}&password=${password}`)
+    return this.http.get<User[]>(`${this.config.apiUrl}/users?email=${email}`)
       .pipe(
         map(users => {
           if (users.length > 0) {
             const user = users[0];
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            this.userValue = user;
-            this.userSubject.next(user);
-            return user;
+            const passwordHash = btoa(password); // Encriptar la contraseña ingresada en el formulario de inicio de sesión
+            if (user.password === passwordHash) { // Verificar la contraseña encriptada con la almacenada en la base de datos
+              localStorage.setItem('currentUser', JSON.stringify(user));
+              this.userValue = user;
+              this.userSubject.next(user);
+              return user;
+            } else {
+              return null;
+            }
           } else {
             return null;
           }

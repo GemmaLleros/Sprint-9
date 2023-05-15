@@ -24,8 +24,7 @@
       "dom"
     ],
     "paths": {
-      "tslib": ["node_modules/tslib/tslib.d.ts"],
-      "crypto": ["node_modules/crypto-browserify"]
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
     }
   },
   "angularCompilerOptions": {

@@ -1,6 +1,7 @@
 .container-isLoggedin {
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    padding-bottom: 5px;   
 }
 
 #img {
@@ -21,10 +22,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-  
-section {
-    margin-top: 50px;
-}
 
 a {
     color: #820000;
@@ -38,7 +35,6 @@ button {
     background-color:#fff;
     color: #820000;
     border: 1px solid #820000;
-    margin-bottom: 105px;
     text-transform: uppercase;
 }
 button:hover {

@@ -1,9 +1,28 @@
 /* register.component.css */
 .container {
-  padding-top: 300px;
+  padding-top: 140px;
+  margin-bottom: 130px;
 }
 
 
+.custom-input {
+  border: 1px solid #820000;
+}
+
 #my-register-button {
-  border: 2px solid red;
+  background-color: #fff;
+  border: 1px solid #820000;
+  color: #820000;
+  text-transform: uppercase;
+  padding: 6px 15px;
+  font-size: 16px;
+}
+
+#my-register-button:hover {
+  background-color: #820000;
+  color: #fff;
+}
+
+a {
+  color: #820000;
 }
